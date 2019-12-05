@@ -1,0 +1,4 @@
+rootProject.name = 'zhaw-pspp-lab7'
+
+include 'random'
+include 'pi'

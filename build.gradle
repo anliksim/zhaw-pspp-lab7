@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.javamodularity:moduleplugin:1.4.0"
+    }
+}
+
+version = 1.0
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: "org.javamodularity.moduleplugin"
+
+    sourceCompatibility = 13
+    targetCompatibility = 13
+
+    repositories {
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+
+        testLogging {
+            events 'PASSED', 'FAILED', 'SKIPPED'
+        }
+    }
+}
